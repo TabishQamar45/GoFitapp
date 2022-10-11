@@ -7,8 +7,10 @@ import { Image, TouchableOpacity, View, Text, FlatList } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
 import { COLORS, ICONS } from "../../constants/Constants";
 import useDynamicStyling from "../../customhooks/useDynamicStyling";
-
-const CustomDrawerItem = ({ label, icon }) => {
+import React from "react";
+import UserImg from "../UserProfileInformation/UserImg";
+import UserName from "../UserProfileInformation/UserName";
+const CustomDrawerItem = ({ label, icon, onPress }) => {
   const { DynamicStyles } = useDynamicStyling();
 
   return (
@@ -18,7 +20,9 @@ const CustomDrawerItem = ({ label, icon }) => {
         height: 40,
         marginBottom: DynamicStyles(8),
         alignItems: "center",
+        // backgroundColor: "red",
       }}
+      // onPress={onPress}
     >
       <Image
         source={icon}
@@ -77,49 +81,29 @@ function MenuDrawerContent({ navigation }) {
             justifyContent: "center",
             marginVertical: DynamicStyles(15),
           }}
-          onPress={() => console.log("Pressed!")}
+          onPress={() => navigation.navigate("Main-Layout-Stack")}
         >
-          <Image
-            source={ICONS.ellipse}
+          <UserImg height={40} width={40} borderRadius={20} />
+          <UserName>Sophia!</UserName>
+          <Text
             style={{
-              height: 40,
-              width: 40,
-              borderRadius: 20,
-            }}
-          />
-          <View
-            style={{
-              alignItems: "flex-start",
-              justifyContent: "center",
+              fontFamily: "MontserratR",
+              fontWeight: "500",
+              fontSize: RFValue(14, 700),
+              color: "#3A4750",
+              textAlign: "center",
             }}
           >
-            <Text
-              style={{
-                fontFamily: "DM_SansB",
-                fontWeight: "500",
-                fontSize: RFValue(20, 700),
-                textAlign: "center",
-                width: "100%",
-              }}
-            >
-              Sophia !
-            </Text>
-            <Text
-              style={{
-                fontFamily: "MontserratR",
-                fontWeight: "500",
-                fontSize: RFValue(14, 700),
-                color: "#3A4750",
-                textAlign: "center",
-              }}
-            >
-              Basic member
-            </Text>
-          </View>
+            Basic member
+          </Text>
         </TouchableOpacity>
         {/* Drawer Items */}
         <View style={{ flex: 1, marginTop: DynamicStyles(5) }}>
-          <CustomDrawerItem icon={ICONS.dashboard} label={"DashBoard"} />
+          <CustomDrawerItem
+            icon={ICONS.dashboard}
+            label={"DashBoard"}
+            onPress={() => navigation.navigate("dashboard")}
+          />
           <View
             style={{
               borderBottomColor: "#E9ECEF",
@@ -151,7 +135,11 @@ function MenuDrawerContent({ navigation }) {
               width: "100%",
             }}
           />
-          <CustomDrawerItem icon={ICONS.myaccount} label={"My Account"} />
+          <CustomDrawerItem
+            icon={ICONS.myaccount}
+            label={"Profile"}
+            onPress={() => console.log("pressed!")}
+          />
           <View
             style={{
               borderBottomColor: "#E9ECEF",

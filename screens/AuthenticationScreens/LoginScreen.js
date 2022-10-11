@@ -20,8 +20,10 @@ import TertiaryButton from "../../Components/ui/TertiaryButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import useDynamicStyling from "../../customhooks/useDynamicStyling";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const LoginScreen = () => {
+  const Insets = useSafeAreaInsets();
   const navigation = useNavigation();
   const { DynamicStyles } = useDynamicStyling();
   const { height } = useWindowDimensions();
@@ -30,19 +32,11 @@ const LoginScreen = () => {
       <View
         style={{
           flex: 1,
-          paddingTop: DynamicStyles(40),
+          paddingTop: height > 700 ? DynamicStyles(80) : DynamicStyles(100),
           alignItems: "flex-start",
           paddingHorizontal: DynamicStyles(16),
         }}
       >
-        <View style={{ width: "10%" }}>
-          <TouchableOpacity
-            style={{ marginVertical: DynamicStyles(10) }}
-            onPress={() => navigation.navigate("Splash")}
-          >
-            <Ionicons name="arrow-back" size={DynamicStyles(26)} />
-          </TouchableOpacity>
-        </View>
         <View style={{ width: "90%" }}>
           <Heading>Welcome to Pro Fitness!</Heading>
         </View>
@@ -88,6 +82,7 @@ const LoginScreen = () => {
         <View style={{ width: "100%", marginVertical: DynamicStyles(10) }}>
           <PrimaryButton
             backgroundColor={"#B0C929"}
+            borderColor={"#b0c929"}
             textColor={"#FFFFFF"}
             onPress={() => navigation.navigate("home-screen-navigator")}
           >
@@ -117,6 +112,7 @@ const LoginScreen = () => {
         >
           <TertiaryButton
             backgroundColor={"#F5F5F5"}
+            borderColor={"#f5f5fd"}
             textColor={"#50565e"}
             source={require("../../assets/Images/google-icon.png")}
           >
@@ -132,6 +128,7 @@ const LoginScreen = () => {
         >
           <TertiaryButton
             backgroundColor={"#4267B2"}
+            borderColor={"#4267b2"}
             textColor={"#ffffff"}
             source={require("../../assets/Images/facebook-icon.png")}
           >

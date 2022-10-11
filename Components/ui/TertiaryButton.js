@@ -14,6 +14,9 @@ const TertiaryButton = ({
   backgroundColor,
   onPress,
   source,
+  borderColor,
+  alignItems,
+  tintColor
 }) => {
   const { width, height } = useWindowDimensions();
   const { DynamicStyles } = useDynamicStyling();
@@ -21,17 +24,19 @@ const TertiaryButton = ({
     <TouchableOpacity onPress={onPress}>
       <View
         style={{
+          borderColor: borderColor,
+          borderWidth: 1,
           backgroundColor: backgroundColor,
           flexDirection: "row",
           borderRadius: DynamicStyles(10),
-          justifyContent: "center",
           alignItems: "center",
+
           height:
             width / (height < 700 ? DynamicStyles(7) : DynamicStyles(6.5)),
         }}
       >
         <View style={{ flex: DynamicStyles(2), alignItems: "center" }}>
-          <Image source={source} />
+          <Image style={{ tintColor: tintColor }} source={source} />
         </View>
         <View
           style={{ flex: DynamicStyles(5), paddingLeft: DynamicStyles(10) }}

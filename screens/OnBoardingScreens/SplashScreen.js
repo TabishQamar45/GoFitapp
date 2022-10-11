@@ -12,7 +12,7 @@ const SplashScreen = () => {
       <Ionicons
         size={50}
         name="fitness"
-        onPress={() => navigation.navigate("Authentication")}
+        onPress={() => navigation.navigate("authentication")}
       />
     </View>
     // </LinearGradient>

@@ -30,19 +30,12 @@ const ForgotPassScreen = () => {
       <View
         style={{
           flex: 1,
-          paddingTop: DynamicStyles(40),
+          paddingTop:height>700? DynamicStyles(80):DynamicStyles(100),
           alignItems: "flex-start",
           paddingHorizontal: DynamicStyles(16),
         }}
       >
-        <View style={{ width: "10%" }}>
-          <TouchableOpacity
-            style={{ marginVertical: DynamicStyles(10) }}
-            onPress={() => navigation.navigate("login")}
-          >
-            <Ionicons name="arrow-back" size={DynamicStyles(26)} />
-          </TouchableOpacity>
-        </View>
+      
         <View style={{ width: "90%" }}>
           <Heading>Forgot Password</Heading>
         </View>
@@ -84,6 +77,7 @@ const ForgotPassScreen = () => {
           <PrimaryButton
             backgroundColor={"#B0C929"}
             textColor={"#FFFFFF"}
+            borderColor={"#B0C929"}
             onPress={() => navigation.navigate("verify-acc")}
           >
             Reset Password

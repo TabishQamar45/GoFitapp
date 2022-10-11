@@ -4,6 +4,47 @@ export const COLORS = {
   PRIMARY_300: "#E9ECEF",
 };
 
+export const ageData = [
+  "",
+  "14",
+  "15",
+  "16",
+  "17",
+  "18",
+  "19",
+  "20",
+  "21",
+  "22",
+  "23",
+  "24",
+  "25",
+  "26",
+  "27",
+  "28",
+  "29",
+  "30",
+  "31",
+  "32",
+  "33",
+  "34",
+  "35",
+  "36",
+  "37",
+  "38",
+  "39",
+  "40",
+  "51",
+  "52",
+  "53",
+  "54",
+  "55",
+  "56",
+  "57",
+  "58",
+  "59",
+  "60",
+];
+
 export const ICONS = {
   home: require("../assets/Images/home.png"),
   meal: require("../assets/Images/diet.png"),
@@ -24,3 +65,36 @@ export const ICONS = {
   dashboard: require("../assets/Images/dashboard.png"),
   heart: require("../assets/Images/heart.png"),
 };
+
+export const FavoriteData = [
+  {
+    id: 0,
+    item: require("../assets/Images/running.png"),
+    text: "Running",
+  },
+  {
+    id: 1,
+    item: require("../assets/Images/walking.png"),
+    text: "Walking",
+  },
+  {
+    id: 2,
+    item: require("../assets/Images/mealplan.png"),
+    text: "Meal Plan",
+  },
+  {
+    id: 3,
+    item: require("../assets/Images/cycling.png"),
+    text: "Cycling",
+  },
+  {
+    id: 4,
+    item: require("../assets/Images/yoga.png"),
+    text: "Yoga",
+  },
+  {
+    id: 5,
+    item: require("../assets/Images/health.png"),
+    text: "Health",
+  },
+];

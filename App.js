@@ -10,6 +10,8 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import AuthenticationNavigator from "./navigation/AuthenticationNavigator";
 import HomeScreenNavigator from "./navigation/HomeScreenNavigator";
+import AccSetupNavigator from "./navigation/AccSetupNavigator";
+import MainLayoutStackNavigator from "./navigation/MainLayoutStackNavigator";
 const Stack = createNativeStackNavigator();
 const getFonts = () =>
   Font.loadAsync({
@@ -17,7 +19,7 @@ const getFonts = () =>
     MontserratR: require("./assets/fonts/Montserrat/Montserrat-Regular.ttf"),
     MontserratB: require("./assets/fonts/Montserrat/Montserrat-Bold.ttf"),
     DM_SansB: require("./assets/fonts/DM_Sans/DMSans_Bold.ttf"),
-    // DM_SansR: require("./assets/fonts/DM_Sans/DM_Sans-Regular.ttf"),
+    DM_SansR: require("./assets/fonts/DM_Sans/DMSans_Regular.ttf"),
   });
 
 export default function App() {
@@ -25,9 +27,7 @@ export default function App() {
   if (fontsloaded) {
     return (
       <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{ headerTransparent: true, headerShown: false }}
-        >
+        <Stack.Navigator screenOptions={{ headerTransparent: true }}>
           <Stack.Screen name="Splash" component={SplashScreen} />
           <Stack.Screen
             options={{
@@ -37,13 +37,23 @@ export default function App() {
               headerTitle: "",
               headerShown: false,
             }}
-            name="Authentication"
+            name="authentication"
             component={AuthenticationNavigator}
           />
           <Stack.Screen
             name="home-screen-navigator"
             component={HomeScreenNavigator}
-            options={{ headerTitle: "" }}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="AccountSetup"
+            component={AccSetupNavigator}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Main-Layout-Stack"
+            component={MainLayoutStackNavigator}
+            options={{ headerShown: false }}
           />
         </Stack.Navigator>
       </NavigationContainer>

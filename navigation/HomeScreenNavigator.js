@@ -1,5 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image } from "react-native";
+import React from "react";
 import { ICONS } from "../constants/Constants";
 import ExerciseScreen from "../screens/HomeActionMenuScreens/ExerciseScreen";
 import MainLayout from "../screens/HomeActionMenuScreens/MainLayout";

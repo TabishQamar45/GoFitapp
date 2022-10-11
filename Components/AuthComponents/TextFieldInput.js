@@ -14,6 +14,7 @@ const TextFieldInput = ({ placeholder, value, setValue, secureTextEntry }) => {
   return (
     <TextInput
       placeholder={placeholder}
+      placeholderTextColor={"#D1D1D1"}
       value={value}
       setValue={(text) => setValue(text)}
       secureTextEntry={secureTextEntry}

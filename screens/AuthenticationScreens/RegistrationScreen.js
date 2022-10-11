@@ -30,19 +30,19 @@ const RegistrationScreen = () => {
       <View
         style={{
           flex: 1,
-          paddingTop: DynamicStyles(40),
+          paddingTop: height > 700 ? DynamicStyles(80) : DynamicStyles(100),
           alignItems: "flex-start",
           paddingHorizontal: DynamicStyles(16),
         }}
       >
-        <View style={{ width: "10%" }}>
+        {/* <View style={{ width: "10%" }}>
           <TouchableOpacity
             style={{ marginVertical: DynamicStyles(10) }}
             onPress={() => navigation.navigate("login")}
           >
             <Ionicons name="arrow-back" size={DynamicStyles(26)} />
           </TouchableOpacity>
-        </View>
+        </View> */}
         <View style={{ width: "90%" }}>
           <Heading>Create Accounts</Heading>
         </View>
@@ -91,7 +91,11 @@ const RegistrationScreen = () => {
         </View>
 
         <View style={{ width: "100%", marginVertical: DynamicStyles(10) }}>
-          <PrimaryButton backgroundColor={"#B0C929"} textColor={"#FFFFFF"}>
+          <PrimaryButton
+            backgroundColor={"#B0C929"}
+            textColor={"#FFFFFF"}
+            borderColor={"#B0C929"}
+          >
             Create Account
           </PrimaryButton>
         </View>
@@ -118,6 +122,7 @@ const RegistrationScreen = () => {
         >
           <TertiaryButton
             backgroundColor={"#F5F5F5"}
+            borderColor={"#f5f5fd"}
             textColor={"#50565e"}
             source={require("../../assets/Images/google-icon.png")}
           >
@@ -133,6 +138,7 @@ const RegistrationScreen = () => {
         >
           <TertiaryButton
             backgroundColor={"#4267B2"}
+            borderColor={"#4267b2"}
             textColor={"#ffffff"}
             source={require("../../assets/Images/facebook-icon.png")}
           >
@@ -151,7 +157,7 @@ const RegistrationScreen = () => {
           <Text style={{ fontFamily: "MontserratR" }}>
             Already have an account?
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("register")}>
+          <TouchableOpacity onPress={() => navigation.navigate("login")}>
             <Text style={{ fontFamily: "MontserratB" }}> Login!</Text>
           </TouchableOpacity>
         </View>

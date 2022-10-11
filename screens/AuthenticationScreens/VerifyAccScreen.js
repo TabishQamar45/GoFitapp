@@ -36,19 +36,19 @@ const VerifyAccScreen = () => {
       <View
         style={{
           flex: 1,
-          paddingTop: DynamicStyles(40),
+          paddingTop: height > 700 ? DynamicStyles(80) : DynamicStyles(100),
           alignItems: "flex-start",
           paddingHorizontal: DynamicStyles(16),
         }}
       >
-        <View style={{ width: "10%" }}>
+        {/* <View style={{ width: "10%" }}>
           <TouchableOpacity
             style={{ marginVertical: DynamicStyles(10) }}
             onPress={() => navigation.navigate("forgot-pass")}
           >
             <Ionicons name="arrow-back" size={DynamicStyles(26)} />
           </TouchableOpacity>
-        </View>
+        </View> */}
         <View style={{ width: "90%" }}>
           <Heading>Verify Account</Heading>
         </View>
@@ -165,7 +165,11 @@ const VerifyAccScreen = () => {
               height < 700 ? DynamicStyles(100) : DynamicStyles(105),
           }}
         >
-          <PrimaryButton backgroundColor={"#B0C929"} textColor={"#FFFFFF"}>
+          <PrimaryButton
+            backgroundColor={"#B0C929"}
+            textColor={"#FFFFFF"}
+            borderColor={"#B0C929"}
+          >
             Reset Password
           </PrimaryButton>
           <TouchableOpacity>
