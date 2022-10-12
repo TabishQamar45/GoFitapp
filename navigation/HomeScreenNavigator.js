@@ -1,14 +1,19 @@
+import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Image } from "react-native";
-import React from "react";
 import { ICONS } from "../constants/Constants";
-import ExerciseScreen from "../screens/HomeActionMenuScreens/ExerciseScreen";
-import MainLayout from "../screens/HomeActionMenuScreens/MainLayout";
-import MealScreen from "../screens/HomeActionMenuScreens/MealScreen";
+import { RFValue } from "react-native-responsive-fontsize";
+
+import ShopScreen from "../screens/HomeActionMenuScreens/ShopScreen";
+import MentorsScreen from "../screens/HomeActionMenuScreens/MentorsScreen";
+
+import MentorStack from "./Stacks/MentorStack";
+import ShopStack from "./Stacks/ShopStack";
+
 import ProfileScreen from "../screens/HomeActionMenuScreens/ProfileScreen";
 import MenuDrawerNavigator from "./MenuDrawerNavigator";
 import useDynamicStyling from "../customhooks/useDynamicStyling";
-import { RFValue } from "react-native-responsive-fontsize";
+
 const Tab = createBottomTabNavigator();
 
 function HomeScreenNavigator() {
@@ -26,20 +31,21 @@ function HomeScreenNavigator() {
         name="Home"
         component={MenuDrawerNavigator}
         options={{
-          tabBarLabelStyle: {
-            fontFamily: "MontserratR",
-            fontSize: RFValue(12, 667),
-            fontWeight: "500",
-            lineHeight: DynamicStyles(15),
-          },
-          tabBarIcon: ({ color }) => (
-            <Image source={ICONS.home} style={{ tintColor: color }} />
-          ),
+          // tabBarLabelStyle: {
+          //   fontFamily: "MontserratR",
+          //   fontSize: RFValue(12, 667),
+          //   fontWeight: "500",
+          //   lineHeight: DynamicStyles(15),
+          // },
+          // tabBarIcon: ({ color }) => (
+          //   <Image source={ICONS.home} style={{ tintColor: color }} />
+          // ),
+          headerShown: false,
         }}
       />
       <Tab.Screen
-        name="Schedule"
-        component={MealScreen}
+        name="Mentor"
+        component={MentorStack}
         options={{
           tabBarLabelStyle: {
             fontFamily: "MontserratR",
@@ -48,13 +54,13 @@ function HomeScreenNavigator() {
             lineHeight: DynamicStyles(15),
           },
           tabBarIcon: ({ color }) => (
-            <Image source={ICONS.dashboard} style={{ tintColor: color }} />
+            <Image source={ICONS.profile} style={{ tintColor: color }} />
           ),
         }}
       />
       <Tab.Screen
         name="Shop"
-        component={ExerciseScreen}
+        component={ShopStack}
         options={{
           tabBarLabelStyle: {
             fontFamily: "MontserratR",
@@ -68,7 +74,7 @@ function HomeScreenNavigator() {
         }}
       />
       <Tab.Screen
-        name="Mentor"
+        name="Profile"
         component={ProfileScreen}
         options={{
           tabBarLabelStyle: {
@@ -78,7 +84,7 @@ function HomeScreenNavigator() {
             lineHeight: DynamicStyles(15),
           },
           tabBarIcon: ({ color }) => (
-            <Image source={ICONS.profile} style={{ tintColor: color }} />
+            <Image source={ICONS.dashboard} style={{ tintColor: color }} />
           ),
         }}
       />

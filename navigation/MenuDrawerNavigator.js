@@ -8,7 +8,7 @@ import { COLORS } from "../constants/Constants";
 import MenuDrawerContent from "../Components/MenuDrawerComponent/MenuDrawerContent";
 import Animated from "react-native-reanimated";
 import React, { useState } from "react";
-import MainLayout from "../screens/HomeActionMenuScreens/MainLayout";
+import HomeScreen from "../screens/HomeActionMenuScreens/HomeScreen";
 const MenuDrawer = createDrawerNavigator();
 
 function MenuDrawerNavigator() {
@@ -17,7 +17,7 @@ function MenuDrawerNavigator() {
       <MenuDrawer.Navigator
         detachInactiveScreens={true}
         screenOptions={{
-          headerShown: false,
+          headerShown: true,
           drawerType: "slide",
           overlayColor: "transparent",
           drawerStyle: {
@@ -29,16 +29,17 @@ function MenuDrawerNavigator() {
           sceneContainerStyle: {
             backgroundColor: "transparent",
           },
+          // title: "",
         }}
-        initialRouteName="MainLayout"
+        initialRouteName="HomeScreen"
         useLegacyImplementation
         drawerContent={(props) => {
           return <MenuDrawerContent {...props} />;
         }}
       >
-        <MenuDrawer.Screen name="main">
-          {(props) => <MainLayout {...props} />}
-        </MenuDrawer.Screen>
+        <MenuDrawer.Screen name="main" component={HomeScreen} />
+        {/* {(props) => <HomeScreen {...props} />} */}
+        {/* </MenuDrawer.Screen> */}
       </MenuDrawer.Navigator>
     </View>
   );
