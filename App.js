@@ -18,6 +18,7 @@ const getFonts = () =>
     BebasNeue: require("./assets/fonts/BebasNeue-Regular/BebasNeue-Regular.ttf"),
     MontserratR: require("./assets/fonts/Montserrat/Montserrat-Regular.ttf"),
     MontserratB: require("./assets/fonts/Montserrat/Montserrat-Bold.ttf"),
+    MontserratM: require("./assets/fonts/Montserrat/Montserrat_Medium.ttf"),
     DM_SansB: require("./assets/fonts/DM_Sans/DMSans_Bold.ttf"),
     DM_SansR: require("./assets/fonts/DM_Sans/DMSans_Regular.ttf"),
   });

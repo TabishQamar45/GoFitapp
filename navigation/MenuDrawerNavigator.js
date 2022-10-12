@@ -37,9 +37,13 @@ function MenuDrawerNavigator() {
           return <MenuDrawerContent {...props} />;
         }}
       >
-        <MenuDrawer.Screen name="main" component={HomeScreen} />
-        {/* {(props) => <HomeScreen {...props} />} */}
-        {/* </MenuDrawer.Screen> */}
+        <MenuDrawer.Screen
+          name="main"
+          component={HomeScreen}
+          options={{
+            title: "",
+          }}
+        />
       </MenuDrawer.Navigator>
     </View>
   );

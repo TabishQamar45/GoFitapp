@@ -31,16 +31,15 @@ function HomeScreenNavigator() {
         name="Home"
         component={MenuDrawerNavigator}
         options={{
-          // tabBarLabelStyle: {
-          //   fontFamily: "MontserratR",
-          //   fontSize: RFValue(12, 667),
-          //   fontWeight: "500",
-          //   lineHeight: DynamicStyles(15),
-          // },
-          // tabBarIcon: ({ color }) => (
-          //   <Image source={ICONS.home} style={{ tintColor: color }} />
-          // ),
-          headerShown: false,
+          tabBarLabelStyle: {
+            fontFamily: "MontserratR",
+            fontSize: RFValue(12, 667),
+            fontWeight: "500",
+            lineHeight: DynamicStyles(15),
+          },
+          tabBarIcon: ({ color }) => (
+            <Image source={ICONS.home} style={{ tintColor: color }} />
+          ),
         }}
       />
       <Tab.Screen

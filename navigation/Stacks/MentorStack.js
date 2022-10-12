@@ -7,13 +7,7 @@ const Stack = createNativeStackNavigator();
 
 const MentorStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerTransparent: true,
-        headerShown: true,
-      }}
-      initialRouteName="MentorsScreen"
-    >
+    <Stack.Navigator>
       <Stack.Screen name="MentorsScreen" component={MentorsScreen} />
       <Stack.Screen
         options={{

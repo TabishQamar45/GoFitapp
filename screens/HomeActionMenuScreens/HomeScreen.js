@@ -4,7 +4,11 @@ import { Calendar } from "react-native-calendars";
 import moment from "moment";
 import DropDownPicker from "react-native-dropdown-picker";
 import AppointmentCard from "../../Components/Appointments/AppointmentCard";
+import useDynamicStyling from "../../customhooks/useDynamicStyling";
+import { RFValue } from "react-native-responsive-fontsize";
+import { COLORS } from "../../constants/Constants";
 const HomeScreen = () => {
+  const { DynamicStyles } = useDynamicStyling();
   const [selected, setSelected] = useState(moment().format("YYYY-MM-DD"));
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
@@ -19,33 +23,36 @@ const HomeScreen = () => {
     <ScrollView
       style={{
         flex: 1,
-        // backgroundColor: "#FCFCFC",
-        padding: 20,
+        backgroundColor: COLORS.PRIMARY_100,
+        padding: DynamicStyles(20),
       }}
       contentContainerStyle={{ justifyContent: "space-between" }}
     >
-      <View>
+      <View style={{ backgroundColor: "transparent" }}>
         <Text
-          style={{ fontFamily: "BebasNeue", fontSize: 30, marginBottom: 20 }}
+          style={{
+            fontFamily: "BebasNeue",
+            fontSize: RFValue(30, 667),
+            marginBottom: DynamicStyles(20),
+          }}
         >
           Upcoming Appointments
         </Text>
         <AppointmentCard></AppointmentCard>
         <AppointmentCard></AppointmentCard>
-
         <Text
           style={{
             fontFamily: "BebasNeue",
-            fontSize: 30,
-            marginBottom: 20,
-            marginTop: 20,
+            fontSize: RFValue(30, 667),
+            marginBottom: DynamicStyles(20),
+            marginTop: DynamicStyles(20),
           }}
         >
           Workout Detail
         </Text>
         <DropDownPicker
-          style={{ marginBottom: 20 }}
-          maxHeight={500}
+          style={{ marginBottom: DynamicStyles(20) }}
+          maxHeight={DynamicStyles(500)}
           open={open}
           value={value}
           items={items}
@@ -60,17 +67,17 @@ const HomeScreen = () => {
             <View
               key={idx}
               style={{
-                paddingHorizontal: 10,
-                paddingVertical: 10,
-                borderRadius: 5,
+                paddingHorizontal: DynamicStyles(10),
+                paddingVertical: DynamicStyles(10),
+                borderRadius: DynamicStyles(5),
                 backgroundColor: "#B0C929",
-                marginBottom: 10,
+                marginBottom: DynamicStyles(10),
               }}
             >
               <Text
                 style={{
                   fontFamily: "MontserratM",
-                  fontSize: 16,
+                  fontSize: RFValue(16, 667),
                   color: "white",
                 }}
               >
@@ -101,7 +108,10 @@ const HomeScreen = () => {
           arrowColor: "#B0C929",
           todayTextColor: "#B0C929",
         }}
-        style={{ borderRadius: 5, marginVertical: 30 }}
+        style={{
+          borderRadius: DynamicStyles(5),
+          marginVertical: DynamicStyles(30),
+        }}
       ></Calendar>
     </ScrollView>
   );

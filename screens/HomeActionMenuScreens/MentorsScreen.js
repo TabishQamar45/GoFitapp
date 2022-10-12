@@ -1,6 +1,8 @@
 import { View, Text, FlatList, SafeAreaView } from "react-native";
 import React from "react";
 import MentorCard from "../../Components/MentorComponents/MentorCard";
+import useDynamicStyling from "../../customhooks/useDynamicStyling";
+import { COLORS } from "../../constants/Constants";
 
 const mentors = [
   { id: 1, text: "21 Vitamins & Minerals" },
@@ -16,25 +18,26 @@ const mentors = [
 ];
 
 const MentorsScreen = () => {
+  const { DynamicStyles } = useDynamicStyling();
   const renderItem = ({ item }) => <MentorCard />;
   return (
     <SafeAreaView
       style={{
         flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#fff",
+        backgroundColor: COLORS.PRIMARY_100,
       }}
     >
       {/* <MentorCard></MentorCard> */}
+
       <FlatList
         data={mentors}
+        contentContainerStyle={{ alignItems: "center" }}
         renderItem={renderItem}
         // keyExtractor={(item) => item.id}
         numColumns={2}
         key={(item) => item.id}
         showsVerticalScrollIndicator={false}
-      ></FlatList>
+      />
     </SafeAreaView>
   );
 };
