@@ -25,7 +25,8 @@ const MentorStack = () => {
       <Stack.Screen
         options={({ route, navigation }) => ({
           headerStyle: { backgroundColor: COLORS.PRIMARY_100 },
-          title: "Profile",
+          title: "MentorProfile",
+          headerTitleAlign: "center",
           headerRight: () => (
             <TouchableOpacity onPress={() => navigation.navigate("MentorChat")}>
               <Image
@@ -52,9 +53,7 @@ const MentorStack = () => {
                 backgroundColor: "yellow",
               }}
             >
-              <TouchableOpacity
-                onPress={() => navigation.navigate("MentorDetail")}
-              >
+              <TouchableOpacity onPress={() => navigation.pop()}>
                 <Ionicons name="arrow-back" color={"black"} size={26} />
               </TouchableOpacity>
               <Image
