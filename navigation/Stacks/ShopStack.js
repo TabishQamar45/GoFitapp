@@ -7,13 +7,7 @@ const Stack = createNativeStackNavigator();
 
 const ShopStack = () => {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerTransparent: true,
-        headerShown: true,
-      }}
-      initialRouteName="ShopScreen"
-    >
+    <Stack.Navigator initialRouteName="ShopScreen">
       <Stack.Screen name="ShopScreen" component={ShopScreen} />
       <Stack.Screen
         options={{

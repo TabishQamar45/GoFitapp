@@ -3,21 +3,20 @@ import React from "react";
 import MentorCard from "../../Components/MentorComponents/MentorCard";
 import useDynamicStyling from "../../customhooks/useDynamicStyling";
 import { COLORS } from "../../constants/Constants";
+import { useNavigation } from "@react-navigation/native";
+import MentorDivider from "../../Components/MentorComponents/MentorDivider";
 
 const mentors = [
-  { id: 1, text: "21 Vitamins & Minerals" },
-  { id: 2, text: "21 Vitamins & Minerals" },
-  { id: 3, text: "21 Vitamins & Minerals" },
-  { id: 4, text: "21 Vitamins & Minerals" },
-  { id: 5, text: "21 Vitamins & Minerals" },
-  { id: 6, text: "21 Vitamins & Minerals" },
-  { id: 7, text: "21 Vitamins & Minerals" },
-  { id: 8, text: "21 Vitamins & Minerals" },
-  { id: 9, text: "21 Vitamins & Minerals" },
-  { id: 10, text: "21 Vitamins & Minerals" },
+  { id: 1, name: "Ali Raza", address: "Islamabad, Pakistan" },
+  { id: 2, name: "Ahmad Butt", address: "Rawalpindi Punjab, Pakistan" },
+  { id: 3, name: "Shakeel Gujjar", address: "Lahore Punjab, Pakistan" },
+  { id: 4, name: "Bilal Zafar", address: "Islamabad , Pakistan" },
+  { id: 5, name: "Rukhsana Rehman", address: "Lahore Punjab, Pakistan" },
+  { id: 6, name: "Shabana Balqees", address: "Sahiwal Punjab, Pakistan" },
 ];
 
 const MentorsScreen = () => {
+  const { navigation } = useNavigation();
   const { DynamicStyles } = useDynamicStyling();
   const renderItem = ({ item }) => <MentorCard />;
   return (
@@ -25,18 +24,22 @@ const MentorsScreen = () => {
       style={{
         flex: 1,
         backgroundColor: COLORS.PRIMARY_100,
+        padding: DynamicStyles(15),
       }}
     >
-      {/* <MentorCard></MentorCard> */}
-
       <FlatList
+        keyExtractor={(mentor) => mentor.id}
         data={mentors}
-        contentContainerStyle={{ alignItems: "center" }}
-        renderItem={renderItem}
-        // keyExtractor={(item) => item.id}
-        numColumns={2}
-        key={(item) => item.id}
-        showsVerticalScrollIndicator={false}
+        renderItem={(mentor) => (
+          <>
+            <MentorCard
+              name={mentor.item.name}
+              address={mentor.item.address}
+              navigation={navigation}
+            />
+            {/* <MentorDivider /> */}
+          </>
+        )}
       />
     </SafeAreaView>
   );

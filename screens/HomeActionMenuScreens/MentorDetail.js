@@ -1,6 +1,10 @@
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
 import React from "react";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import MentorCard from "../../Components/MentorComponents/MentorCard";
+import { COLORS } from "../../constants/Constants";
+import { useNavigation } from "@react-navigation/native";
+import MentorDetailTabNavigator from "../../navigation/MentorDetailTabNavigator";
 
 const services = [
   { id: 1, service: "Private Personal Training" },
@@ -12,18 +16,21 @@ const services = [
   { id: 7, service: "Private Personal Training" },
 ];
 
-const MentorDetail = () => {
+const MentorDetail = ({ route, navigation }) => {
+  const { name, address } = route.params;
+  // const {route}=useNavigation();
   const insets = useSafeAreaInsets();
   return (
-    <View
+    <ScrollView
       style={{
         flex: 1,
-        marginTop: insets.top + 40,
         padding: 20,
-        backgroundColor: "#ededed",
+        backgroundColor: COLORS.PRIMARY_100,
       }}
     >
-      <Text
+      <MentorCard name={name} address={address} />
+      <MentorDetailTabNavigator/>
+      {/* <Text
         style={{ fontSize: 20, fontFamily: "MontserratB", marginBottom: 15 }}
       >
         About
@@ -69,8 +76,8 @@ const MentorDetail = () => {
       >
         Certifications
       </Text>
-      <Text>American councel on Exercise</Text>
-    </View>
+      <Text>American councel on Exercise</Text> */}
+    </ScrollView>
   );
 };
 

@@ -8,6 +8,7 @@ import {
   StatusBar,
 } from "react-native";
 import ProductDisplay from "../../Components/ShopComponents/ProductDisplay";
+import { COLORS } from "../../constants/Constants";
 
 const DATA = [
   {
@@ -42,6 +43,9 @@ const ShopScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <FlatList
+        contentContainerStyle={{
+          alignItems: "center",
+        }}
         data={DATA}
         renderItem={renderItem}
         // keyExtractor={(item) => item.id}
@@ -56,8 +60,7 @@ const ShopScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: COLORS.PRIMARY_100,
   },
 });
 

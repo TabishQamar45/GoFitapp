@@ -47,6 +47,8 @@ export const ageData = [
 
 export const ICONS = {
   home: require("../assets/Images/home.png"),
+  location: require("../assets/Images/location.png"),
+
   meal: require("../assets/Images/diet.png"),
   exercise: require("../assets/Images/weight.png"),
   profile: require("../assets/Images/profile.png"),

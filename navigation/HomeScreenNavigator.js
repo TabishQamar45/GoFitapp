@@ -75,7 +75,10 @@ function HomeScreenNavigator() {
             lineHeight: DynamicStyles(15),
           },
           tabBarIcon: ({ color }) => (
-            <Image source={ICONS.profile} style={{ tintColor: color }} />
+            <Image
+              source={require("../assets/Images/mentor.png")}
+              style={{ tintColor: color }}
+            />
           ),
         }}
       />
