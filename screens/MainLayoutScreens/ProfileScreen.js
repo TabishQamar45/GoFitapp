@@ -8,88 +8,92 @@ import { COLORS } from "../../constants/Constants";
 import Information from "../../Components/ProfileScreenComponent/Information";
 import Unit from "../../Components/ProfileScreenComponent/Unit";
 import Value from "../../Components/ProfileScreenComponent/Value";
+import ProfileTabNavigator from "../../navigation/ProfileTabNavigator/ProfileTabNavigator";
 
 const ProfileScreen = () => {
   const { height } = useWindowDimensions();
   const { DynamicStyles } = useDynamicStyling();
   return (
-    <View
-      style={{
-        flex: 1,
-        paddingTop: height > 700 ? DynamicStyles(80) : DynamicStyles(90),
-        paddingHorizontal: DynamicStyles(16),
-        backgroundColor: COLORS.PRIMARY_100,
-      }}
-    >
+    <>
       <View
         style={{
-          justifyContent: "space-evenly",
-          alignItems: "center",
-          height: DynamicStyles(180),
+          flex: 1,
+          paddingTop: height > 700 ? DynamicStyles(80) : DynamicStyles(90),
+          paddingHorizontal: DynamicStyles(16),
+          backgroundColor: COLORS.PRIMARY_100,
         }}
       >
-        <UserImg
-          height={DynamicStyles(104)}
-          width={DynamicStyles(104)}
-          borderRadius={DynamicStyles(52)}
-        />
-        <UserName alignSelf={"center"}>Sophia</UserName>
-        <UserType>Basic Member</UserType>
-      </View>
-      <View
-        style={{
-          flexDirection: "row",
-          width: "80%",
-          justifyContent: "space-around",
-          alignSelf: "center",
-          marginVertical: DynamicStyles(20),
-          height: DynamicStyles(36),
-        }}
-      >
-        <View>
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Value>55</Value>
-            <Unit>kg</Unit>
-          </View>
-          <Information>Weight</Information>
+        <View
+          style={{
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            height: DynamicStyles(180),
+          }}
+        >
+          <UserImg
+            height={DynamicStyles(104)}
+            width={DynamicStyles(104)}
+            borderRadius={DynamicStyles(52)}
+          />
+          <UserName alignSelf={"center"}>Sophia</UserName>
+          <UserType>Basic Member</UserType>
         </View>
         <View
           style={{
-            height: "60%",
+            flexDirection: "row",
+            width: "80%",
+            justifyContent: "space-around",
             alignSelf: "center",
-            width: 1,
-            backgroundColor: "#909090",
+            marginVertical: DynamicStyles(20),
+            height: DynamicStyles(36),
           }}
-        />
-        <View>
+        >
+          <View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Value>55</Value>
+              <Unit>kg</Unit>
+            </View>
+            <Information>Weight</Information>
+          </View>
           <View
             style={{
-              flexDirection: "row",
-              alignItems: "center",
+              height: "60%",
+              alignSelf: "center",
+              width: 1,
+              backgroundColor: "#909090",
             }}
-          >
-            <Value>170</Value>
-            <Unit>cm</Unit>
+          />
+          <View>
+            <View
+              style={{
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Value>170</Value>
+              <Unit>cm</Unit>
+            </View>
+            <Information>Height</Information>
           </View>
-          <Information>Height</Information>
-        </View>
-        <View
-          style={{
-            height: "60%",
-            alignSelf: "center",
-            width: 1,
-            backgroundColor: "#909090",
-          }}
-        />
-        <View>
-          <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <Value>18</Value>
-            <Unit>year</Unit>
+          <View
+            style={{
+              height: "60%",
+              alignSelf: "center",
+              width: 1,
+              backgroundColor: "#909090",
+            }}
+          />
+          <View>
+            <View style={{ flexDirection: "row", alignItems: "center" }}>
+              <Value>18</Value>
+              <Unit>year</Unit>
+            </View>
+            <Information>Age</Information>
           </View>
-          <Information>Age</Information>
         </View>
       </View>
-    </View>
+      <ProfileTabNavigator />
+    </>
   );
 };
 
