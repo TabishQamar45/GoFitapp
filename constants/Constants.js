@@ -64,6 +64,7 @@ export const ICONS = {
   ellipse: require("../assets/Images/Ellipse.png"),
   dashboard: require("../assets/Images/dashboard.png"),
   heart: require("../assets/Images/heart.png"),
+  calendar: require("../assets/Images/Calendar.png"),
 };
 
 export const FavoriteData = [

@@ -9,6 +9,7 @@ import MentorsScreen from "../screens/HomeActionMenuScreens/MentorsScreen";
 
 import MentorStack from "./Stacks/MentorStack";
 import ShopStack from "./Stacks/ShopStack";
+import BookingStack from "./Stacks/BookingStack";
 
 import ProfileScreen from "../screens/HomeActionMenuScreens/ProfileScreen";
 import MenuDrawerNavigator from "./MenuDrawerNavigator";
@@ -22,9 +23,9 @@ function HomeScreenNavigator() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#000000",
+        tabBarActiveTintColor: "#B0C929",
         tabBarInactiveTintColor: "#909090",
-        tabBarStyle: { backgroundColor: "white" },
+        tabBarStyle: { backgroundColor: "#000" },
       }}
     >
       <Tab.Screen
@@ -39,6 +40,27 @@ function HomeScreenNavigator() {
           },
           tabBarIcon: ({ color }) => (
             <Image source={ICONS.home} style={{ tintColor: color }} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Book"
+        component={BookingStack}
+        options={{
+          tabBarLabel: "Book",
+          tabBarLabelStyle: {
+            fontSize: RFValue(12, 667),
+          },
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={ICONS.calendar}
+              style={{
+                tintColor: focused ? "#B0C929" : "#047893",
+                resizeMode: "contain",
+                width: 25,
+                height: 25,
+              }}
+            />
           ),
         }}
       />
