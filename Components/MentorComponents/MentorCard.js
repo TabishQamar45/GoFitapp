@@ -10,7 +10,12 @@ const MentorCard = ({ name, bio, address }) => {
   const { DynamicStyles } = useDynamicStyling();
   return (
     <TouchableOpacity
-      onPress={() => navigation.navigate("MentorDetail")}
+      onPress={() =>
+        navigation.navigate("MentorDetail", {
+          name: name,
+          address: address,
+        })
+      }
       style={{
         marginVertical: DynamicStyles(10),
         height: DynamicStyles(320),

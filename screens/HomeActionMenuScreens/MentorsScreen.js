@@ -7,7 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 import MentorDivider from "../../Components/MentorComponents/MentorDivider";
 
 const mentors = [
-  { id: 1, name: "Ali Razra", address: "Islamabad, Pakistan" },
+  { id: 1, name: "Ali Raza", address: "Islamabad, Pakistan" },
   { id: 2, name: "Ahmad Butt", address: "Rawalpindi Punjab, Pakistan" },
   { id: 3, name: "Shakeel Gujjar", address: "Lahore Punjab, Pakistan" },
   { id: 4, name: "Bilal Zafar", address: "Islamabad , Pakistan" },
@@ -24,6 +24,7 @@ const MentorsScreen = () => {
       style={{
         flex: 1,
         backgroundColor: COLORS.PRIMARY_100,
+        padding: DynamicStyles(15),
       }}
     >
       <FlatList
@@ -36,7 +37,7 @@ const MentorsScreen = () => {
               address={mentor.item.address}
               navigation={navigation}
             />
-            <MentorDivider />
+            {/* <MentorDivider /> */}
           </>
         )}
       />

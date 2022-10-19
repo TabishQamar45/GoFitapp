@@ -43,29 +43,30 @@ const MentorStack = () => {
         component={MentorChatScreen}
         options={({ route, navigation }) => ({
           // headerLeft: () => <Ionicons name="arrow-back" color={"red"} />,
-          // header: (props) => (
-          //   <View
-          //     style={{
-          //       alignItems: "center",
-          //       height: DynamicStyles(120),
-          //       flexDirection: "row",
-          //     }}
-          //   >
-          //     <TouchableOpacity
-          //       onPress={() => navigation.navigate("MentorDetail")}
-          //     >
-          //       <Ionicons name="arrow-back" color={"red"} size={26} />
-          //     </TouchableOpacity>
-          //     <Image
-          //       source={require("../../assets/Images/Ellipse.png")}
-          //       style={{
-          //         height: DynamicStyles(50),
-          //         width: DynamicStyles(50),
-          //         borderRadius: DynamicStyles(25),
-          //       }}
-          //     />
-          //   </View>
-          // ),
+          header: (props) => (
+            <View
+              style={{
+                alignItems: "center",
+                height: DynamicStyles(120),
+                flexDirection: "row",
+                backgroundColor: "yellow",
+              }}
+            >
+              <TouchableOpacity
+                onPress={() => navigation.navigate("MentorDetail")}
+              >
+                <Ionicons name="arrow-back" color={"black"} size={26} />
+              </TouchableOpacity>
+              <Image
+                source={require("../../assets/Images/Ellipse.png")}
+                style={{
+                  height: DynamicStyles(50),
+                  width: DynamicStyles(50),
+                  borderRadius: DynamicStyles(25),
+                }}
+              />
+            </View>
+          ),
         })}
       />
     </Stack.Navigator>
