@@ -4,15 +4,12 @@ import { Image } from "react-native";
 import { ICONS } from "../constants/Constants";
 import { RFValue } from "react-native-responsive-fontsize";
 
-import ShopScreen from "../screens/HomeActionMenuScreens/ShopScreen";
-import MentorsScreen from "../screens/HomeActionMenuScreens/MentorsScreen";
-
 import MentorStack from "./Stacks/MentorStack";
 import ShopStack from "./Stacks/ShopStack";
 
-import ProfileScreen from "../screens/HomeActionMenuScreens/ProfileScreen";
 import MenuDrawerNavigator from "./MenuDrawerNavigator";
 import useDynamicStyling from "../customhooks/useDynamicStyling";
+import ProfileScreen from "../screens/MainLayoutScreens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 

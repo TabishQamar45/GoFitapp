@@ -1,10 +1,9 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React from "react";
 import { TouchableOpacity, Text, Image } from "react-native";
-import { RFValue } from "react-native-responsive-fontsize";
 import { COLORS } from "../constants/Constants";
-import EditProfileScreen from "../screens/MainLayoutScreens/EditProfileScreen";
 import ProfileScreen from "../screens/MainLayoutScreens/ProfileScreen";
+import EditProfileScreen from "../screens/MainLayoutScreens/EditProfileScreen";
 const Stack = createNativeStackNavigator();
 
 const MainLayoutStackNavigator = () => {
