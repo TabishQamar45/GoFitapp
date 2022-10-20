@@ -10,9 +10,9 @@ import MentorsScreen from "../screens/HomeActionMenuScreens/MentorsScreen";
 import MentorStack from "./Stacks/MentorStack";
 import ShopStack from "./Stacks/ShopStack";
 
-import ProfileScreen from "../screens/HomeActionMenuScreens/ProfileScreen";
 import MenuDrawerNavigator from "./MenuDrawerNavigator";
 import useDynamicStyling from "../customhooks/useDynamicStyling";
+import ProfileScreen from "../screens/HomeActionMenuScreens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
