@@ -4,9 +4,6 @@ import { Image } from "react-native";
 import { ICONS } from "../constants/Constants";
 import { RFValue } from "react-native-responsive-fontsize";
 
-import ShopScreen from "../screens/HomeActionMenuScreens/ShopScreen";
-import MentorsScreen from "../screens/HomeActionMenuScreens/MentorsScreen";
-
 import MentorStack from "./Stacks/MentorStack";
 import ShopStack from "./Stacks/ShopStack";
 
