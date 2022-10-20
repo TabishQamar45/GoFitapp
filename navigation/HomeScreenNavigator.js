@@ -9,7 +9,7 @@ import ShopStack from "./Stacks/ShopStack";
 
 import MenuDrawerNavigator from "./MenuDrawerNavigator";
 import useDynamicStyling from "../customhooks/useDynamicStyling";
-import ProfileScreen from "../screens/HomeActionMenuScreens/ProfileScreen";
+import ProfileScreen from "../screens/MainLayoutScreens/ProfileScreen";
 
 const Tab = createBottomTabNavigator();
 
