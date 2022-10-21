@@ -1,14 +1,15 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import { COLORS } from "../../constants/Constants";
 
 const MentorServicesScreen = () => {
   return (
-    <View>
+    <View style={{ backgroundColor: COLORS.PRIMARY_100, flex: 1 }}>
       <Text>MentorServicesScreen</Text>
     </View>
-  )
-}
+  );
+};
 
-export default MentorServicesScreen
+export default MentorServicesScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({});

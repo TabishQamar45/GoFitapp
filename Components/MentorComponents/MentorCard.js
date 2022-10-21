@@ -18,7 +18,7 @@ const MentorCard = ({ name, bio, address }) => {
       }
       style={{
         marginVertical: DynamicStyles(10),
-        height: DynamicStyles(320),
+        height: DynamicStyles(280),
         borderTopRightRadius: DynamicStyles(20),
         borderTopLeftRadius: DynamicStyles(20),
         borderRadius: DynamicStyles(20),
