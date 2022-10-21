@@ -1,7 +1,7 @@
 import React from "react";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import ProfileScreen from "../../screens/HomeActionMenuScreens/ProfileScreen";
 import { COLORS } from "../../constants/Constants";
+import ProfileOptionsScreen from "../../screens/HomeActionMenuScreens/ProfileOptionsScreen";
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -15,8 +15,14 @@ const ProfileTabNavigator = () => {
         tabBarStyle: { backgroundColor: COLORS.PRIMARY_100 },
       }}
     >
-      <Tab.Screen name="profile" component={ProfileScreen} />
-      <Tab.Screen name="profilee" component={ProfileScreen} />
+      <Tab.Screen
+        name="profile-option"
+        component={ProfileOptionsScreen}
+        options={{
+          title: "SETTINGS",
+        }}
+      />
+      {/* <Tab.Screen name="profilee" component={ProfileScreen} /> */}
     </Tab.Navigator>
   );
 };

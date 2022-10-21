@@ -30,9 +30,11 @@ const MentorsScreen = () => {
       <FlatList
         keyExtractor={(mentor) => mentor.id}
         data={mentors}
+        showsVerticalScrollIndicator={false}
         renderItem={(mentor) => (
           <>
             <MentorCard
+              pressable={false}
               name={mentor.item.name}
               address={mentor.item.address}
               navigation={navigation}

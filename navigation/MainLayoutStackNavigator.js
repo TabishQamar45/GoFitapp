@@ -4,6 +4,7 @@ import { TouchableOpacity, Text, Image } from "react-native";
 import { COLORS } from "../constants/Constants";
 import ProfileScreen from "../screens/MainLayoutScreens/ProfileScreen";
 import EditProfileScreen from "../screens/MainLayoutScreens/EditProfileScreen";
+import { RFValue } from "react-native-responsive-fontsize";
 const Stack = createNativeStackNavigator();
 
 const MainLayoutStackNavigator = () => {
@@ -15,18 +16,15 @@ const MainLayoutStackNavigator = () => {
       }}
     >
       <Stack.Screen
-        name="Profile"
+        name="ProfileScreen"
         component={ProfileScreen}
         options={({ route, navigation }) => ({
           headerStyle: { backgroundColor: COLORS.PRIMARY_100 },
           title: "Profile",
-          headerRight: () => (
-            <TouchableOpacity
-              onPress={() => navigation.navigate("edit-profile")}
-            >
-              <Image source={require("../assets/Images/edit-btn.png")} />
-            </TouchableOpacity>
-          ),
+          headerTitleStyle: {
+            fontFamily: "BebasNeue",
+            fontSize: RFValue(22, 667),
+          },
         })}
       />
       <Stack.Screen

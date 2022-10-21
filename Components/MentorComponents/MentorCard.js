@@ -5,11 +5,13 @@ import useDynamicStyling from "../../customhooks/useDynamicStyling";
 import { RFValue } from "react-native-responsive-fontsize";
 import { COLORS, ICONS } from "../../constants/Constants";
 
-const MentorCard = ({ name, bio, address }) => {
+const MentorCard = ({ name, pressable, address }) => {
   const navigation = useNavigation();
   const { DynamicStyles } = useDynamicStyling();
+
   return (
     <TouchableOpacity
+      disabled={pressable}
       onPress={() =>
         navigation.navigate("MentorDetail", {
           name: name,

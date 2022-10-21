@@ -35,7 +35,7 @@ const MentorDetail = ({ route, navigation }) => {
         backgroundColor: COLORS.PRIMARY_100,
       }}
     >
-      <MentorCard name={name} address={address} />
+      <MentorCard name={name} address={address} pressable={true} />
       <MentorDetailTabNavigator />
     </View>
   );

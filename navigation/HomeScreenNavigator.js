@@ -11,6 +11,7 @@ import BookingStack from "./Stacks/BookingStack";
 import MenuDrawerNavigator from "./MenuDrawerNavigator";
 import useDynamicStyling from "../customhooks/useDynamicStyling";
 import ProfileScreen from "../screens/MainLayoutScreens/ProfileScreen";
+import MainLayoutStackNavigator from "./MainLayoutStackNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -96,7 +97,7 @@ function HomeScreenNavigator() {
       />
       <Tab.Screen
         name="Profile"
-        component={ProfileScreen}
+        component={MainLayoutStackNavigator}
         options={{
           tabBarLabelStyle: {
             fontFamily: "MontserratR",
@@ -105,7 +106,10 @@ function HomeScreenNavigator() {
             lineHeight: DynamicStyles(15),
           },
           tabBarIcon: ({ color }) => (
-            <Image source={ICONS.dashboard} style={{ tintColor: color }} />
+            <Image
+              source={require("../assets/Images/profile.png")}
+              style={{ tintColor: color }}
+            />
           ),
         }}
       />

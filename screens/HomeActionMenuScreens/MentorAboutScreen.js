@@ -12,15 +12,18 @@ import useDynamicStyling from "../../customhooks/useDynamicStyling";
 const MentorAboutScreen = () => {
   const { DynamicStyles } = useDynamicStyling();
   return (
-    <ScrollView style={{ backgroundColor: COLORS.PRIMARY_100,flex:1, }}>
+    <ScrollView
+      style={{ backgroundColor: COLORS.PRIMARY_100, flex: 1 }}
+      showsVerticalScrollIndicator={false}
+    >
       <Text
         style={{
           fontSize: RFValue(14, 667),
-          lineHeight:DynamicStyles(20),
-          letterSpacing:DynamicStyles(0.2),
-          textDecorationLine:'underline',
-          textAlign:'justify',
-          textTransform:'capitalize',
+          lineHeight: DynamicStyles(20),
+          letterSpacing: DynamicStyles(0.2),
+          textDecorationLine: "underline",
+          textAlign: "justify",
+          textTransform: "capitalize",
           fontFamily: "MontserratR",
           marginVertical: DynamicStyles(15),
           color: "#6e6e6e",

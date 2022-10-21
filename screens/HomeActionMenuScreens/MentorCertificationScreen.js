@@ -40,6 +40,7 @@ const MentorCertificationScreen = () => {
           },
         ]}
         scrollEnabled={true}
+        showsVerticalScrollIndicator={false}
         renderItem={(point) => (
           <Text
             style={{
