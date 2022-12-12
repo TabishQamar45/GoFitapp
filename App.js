@@ -2,6 +2,7 @@ import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import * as Font from "expo-font";
+import U1 from "./assets/Images/U1.svg";
 import Apploading from "expo-app-loading";
 import SplashScreen from "./screens/OnBoardingScreens/SplashScreen";
 import { NavigationContainer } from "@react-navigation/native";

@@ -20,7 +20,6 @@ import TertiaryButton from "../../Components/ui/TertiaryButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import useDynamicStyling from "../../customhooks/useDynamicStyling";
-
 const ForgotPassScreen = () => {
   const navigation = useNavigation();
   const { DynamicStyles } = useDynamicStyling();
@@ -30,15 +29,15 @@ const ForgotPassScreen = () => {
       <View
         style={{
           flex: 1,
-          paddingTop:height>700? DynamicStyles(80):DynamicStyles(100),
+          paddingTop: height > 700 ? DynamicStyles(80) : DynamicStyles(100),
           alignItems: "flex-start",
           paddingHorizontal: DynamicStyles(16),
         }}
       >
-      
         <View style={{ width: "90%" }}>
           <Heading>Forgot Password</Heading>
         </View>
+
         <View style={{ width: "85%", marginVertical: DynamicStyles(10) }}>
           <Description>
             Please enter your email below to receive your password reset code.

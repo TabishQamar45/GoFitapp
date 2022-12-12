@@ -21,6 +21,7 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
 import useDynamicStyling from "../../customhooks/useDynamicStyling";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import ProfileSvg from "../../Components/SvgImageComponent/ProfileSvg";
 
 const LoginScreen = () => {
   const Insets = useSafeAreaInsets();
